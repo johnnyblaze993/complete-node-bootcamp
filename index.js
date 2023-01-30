@@ -83,13 +83,21 @@ const dataObj = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
   const pathway = req.url;
+
+  //overview page
   if (pathway === "/" || pathway === "/overview") {
     res.end("This is the overview");
+
+    //product page
   } else if (pathway === "/product") {
     res.end("This is the product");
+
+    //api
   } else if (pathway === "/api") {
     res.writeHead(200, { "Content-type": "application/json" });
     res.end(data);
+
+    //not found
   } else {
     res.writeHead(404, {
       "Content-type": "text/html",
