@@ -74,6 +74,10 @@ const url = require("url");
 
 ///////////////////////////////////////////////////
 //server
+const tempOverview = fs.readFileSync(
+  `${__dirname}/1-node-farm/starter/templates/template-overview.html`,
+  "utf-8"
+);
 
 const data = fs.readFileSync(
   `${__dirname}/1-node-farm/starter/dev-data/data.json`,
